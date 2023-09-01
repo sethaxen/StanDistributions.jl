@@ -1,5 +1,12 @@
 module StanDistributions
 
-# Write your package code here.
+using BridgeStan: BridgeStan
+using Distributions: Distributions
+using DocStringExtensions: FIELDS, TYPEDEF
+
+export StanDistribution
+
+include("utils.jl")
+include("distribution.jl")
 
 end
