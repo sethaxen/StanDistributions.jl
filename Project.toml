@@ -1,7 +1,7 @@
 name = "StanDistributions"
 uuid = "c79ef891-62a4-4b64-9d5a-fce85bcd6f75"
 authors = ["Seth Axen <seth@sethaxen.com> and contributors"]
-version = "1.0.0-DEV"
+version = "0.1.0"
 
 [compat]
 julia = "1.6"
