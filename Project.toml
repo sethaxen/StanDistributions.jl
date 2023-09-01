@@ -14,11 +14,13 @@ Requires = "ae029012-a4dd-5104-9daa-d747884805df"
 Bijectors = "76274a88-744f-5084-9051-94815aaf08c4"
 ChainRulesCore = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
 ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
+ReverseDiff = "37e2e3b7-166d-5795-8a7a-e32c996b4267"
 
 [extensions]
 StanDistributionsBijectorsExt = "Bijectors"
 StanDistributionsChainRulesCoreExt = "ChainRulesCore"
 StanDistributionsForwardDiffExt = "ForwardDiff"
+StanDistributionsReverseDiffExt = "ReverseDiff"
 
 [compat]
 Bijectors = "0.13"
@@ -28,11 +30,14 @@ Distributions = "0.23, 0.24, 0.25"
 DocStringExtensions = "0.9"
 ForwardDiff = "0.10"
 Requires = "1"
+ReverseDiff = "1"
 julia = "1.6"
 
 [extras]
 Bijectors = "76274a88-744f-5084-9051-94815aaf08c4"
+ChainRulesCore = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
 ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
+ReverseDiff = "37e2e3b7-166d-5795-8a7a-e32c996b4267"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [targets]
