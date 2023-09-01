@@ -5,21 +5,25 @@ version = "0.1.0"
 
 [deps]
 BridgeStan = "c88b6f0a-829e-4b0b-94b7-f06ab5908f5a"
+ChainRulesCore = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
 Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
 DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
 Requires = "ae029012-a4dd-5104-9daa-d747884805df"
 
 [weakdeps]
 Bijectors = "76274a88-744f-5084-9051-94815aaf08c4"
+ChainRulesCore = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
 ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
 
 [extensions]
 StanDistributionsBijectorsExt = "Bijectors"
+StanDistributionsChainRulesCoreExt = "ChainRulesCore"
 StanDistributionsForwardDiffExt = "ForwardDiff"
 
 [compat]
 Bijectors = "0.13"
 BridgeStan = "1, 2"
+ChainRulesCore = "1"
 Distributions = "0.23, 0.24, 0.25"
 DocStringExtensions = "0.9"
 ForwardDiff = "0.10"
