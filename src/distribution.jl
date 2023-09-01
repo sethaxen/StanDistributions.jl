@@ -88,26 +88,27 @@ function Distributions.insupport(
     end
 end
 
-function Distributions.logpdf(dist::ConstrainedStanDistribution, x::AbstractVector{<:Real})
+function _unconstrain(dist::ConstrainedStanDistribution{nan_on_error}) where {nan_on_error}
+    return UnconstrainedStanDistribution{nan_on_error}(dist.model)
+end
+
+function Distributions.logpdf(dist::StanDistribution, x::AbstractVector{<:Real})
+    return _logpdf(dist, _convert_to_stan_array(x))
+end
+
+function _logpdf(dist::ConstrainedStanDistribution, x; kwargs...)
     length(x) == length(dist) || throw(
         DimensionMismatch(
             "Length of x, $(length(x)), does not match dimension of distribution, $(length(dist))",
         ),
     )
-    z = _convert_to_stan_array(x)
     y = try
-        BridgeStan.param_unconstrain(dist.model, z)
+        BridgeStan.param_unconstrain(dist.model, x)
     catch
         return -Inf
     end
     return _logpdf(_unconstrain(dist), y; jacobian=false)
 end
-function Distributions.logpdf(
-    dist::UnconstrainedStanDistribution, y::AbstractVector{<:Real}
-)
-    return _logpdf(dist, _convert_to_stan_array(y))
-end
-
 function _logpdf(
     dist::UnconstrainedStanDistribution{nan_on_error}, y; kwargs...
 ) where {nan_on_error}
@@ -119,6 +120,13 @@ function _logpdf(
     end
 end
 
-function _unconstrain(dist::ConstrainedStanDistribution{nan_on_error}) where {nan_on_error}
-    return UnconstrainedStanDistribution{nan_on_error}(dist.model)
+function _logpdf_and_gradient(
+    dist::UnconstrainedStanDistribution{nan_on_error}, y; kwargs...
+) where {nan_on_error}
+    try
+        return BridgeStan.log_density_gradient(dist.model, y; kwargs...)
+    catch
+        nan_on_error || rethrow()
+        return NaN, fill(NaN, length(y))
+    end
 end
