@@ -11,20 +11,24 @@ Requires = "ae029012-a4dd-5104-9daa-d747884805df"
 
 [weakdeps]
 Bijectors = "76274a88-744f-5084-9051-94815aaf08c4"
+ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
 
 [extensions]
 StanDistributionsBijectorsExt = "Bijectors"
+StanDistributionsForwardDiffExt = "ForwardDiff"
 
 [compat]
 Bijectors = "0.13"
 BridgeStan = "1, 2"
 Distributions = "0.23, 0.24, 0.25"
 DocStringExtensions = "0.9"
+ForwardDiff = "0.10"
 Requires = "1"
 julia = "1.6"
 
 [extras]
 Bijectors = "76274a88-744f-5084-9051-94815aaf08c4"
+ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [targets]
