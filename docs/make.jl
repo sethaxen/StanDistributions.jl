@@ -1,7 +1,9 @@
 using StanDistributions
 using Documenter
 
-DocMeta.setdocmeta!(StanDistributions, :DocTestSetup, :(using StanDistributions); recursive=true)
+DocMeta.setdocmeta!(
+    StanDistributions, :DocTestSetup, :(using StanDistributions); recursive=true
+)
 
 makedocs(;
     modules=[StanDistributions],
@@ -9,11 +11,7 @@ makedocs(;
     repo="https://github.com/sethaxen/StanDistributions.jl/blob/{commit}{path}#{line}",
     sitename="StanDistributions.jl",
     format=Documenter.HTML(;
-        prettyurls=get(ENV, "CI", "false") == "true",
-        edit_link="main",
-        assets=String[],
+        prettyurls=get(ENV, "CI", "false") == "true", edit_link="main", assets=String[]
     ),
-    pages=[
-        "Home" => "index.md",
-    ],
+    pages=["Home" => "index.md"],
 )
