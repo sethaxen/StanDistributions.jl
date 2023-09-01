@@ -72,8 +72,8 @@ function StanDistribution(
     return StanDistribution(model; unconstrained, nan_on_error)
 end
 
-Base.length(dist::ConstrainedStanDistribution) = BridgeStan.param_num(dist.model)
-Base.length(dist::UnconstrainedStanDistribution) = BridgeStan.param_unc_num(dist.model)
+Base.length(dist::ConstrainedStanDistribution) = Int(BridgeStan.param_num(dist.model))
+Base.length(dist::UnconstrainedStanDistribution) = Int(BridgeStan.param_unc_num(dist.model))
 
 function Distributions.insupport(
     dist::StanDistribution{unconstrained}, x::AbstractVector{<:Real}
