@@ -36,7 +36,7 @@ function Bijectors.transform(b::Bijectors.Inverse{StanBijector}, y::AbstractVect
 end
 
 function Bijectors.output_length(b::StanBijector, ::Int)
-    return BridgeStan.param_unc_num(b.model)
+    return Int(BridgeStan.param_unc_num(b.model))
 end
 
 end  # module
