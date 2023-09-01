@@ -24,10 +24,7 @@ julia> stan_file = cp(PosteriorDB.path(PosteriorDB.implementation(PosteriorDB.mo
 julia> stan_data = PosteriorDB.load(PosteriorDB.dataset(post), String)
 "{\n  \"J\": 8,\n  \"y\": [28, 8, -3, 7, -1, 1, 18, 12],\n  \"sigma\": [15, 10, 16, 11, 9, 11, 10, 18]\n}\n"
 
-julia> dist = StanDistribution(stan_file, stan_data)
-StanDistribution{false, false}(
-model: BridgeStan.StanModel(Ptr{Nothing} @0x00000000878f1cd0, Ptr{BridgeStan.StanModelStruct} @0x00000001360f9a20, "{\n  \"J\": 8,\n  \"y\": [28, 8, -3, 7, -1, 1, 18, 12],\n  \"sigma\": [15, 10, 16, 11, 9, 11, 10, 18]\n}\n", 0x000000cc)
-)
+julia> dist = StanDistribution(stan_file, stan_data);
 
 julia> length(dist)
 10
