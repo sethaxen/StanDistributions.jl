@@ -3,7 +3,15 @@ uuid = "c79ef891-62a4-4b64-9d5a-fce85bcd6f75"
 authors = ["Seth Axen <seth@sethaxen.com> and contributors"]
 version = "0.1.0"
 
+[deps]
+BridgeStan = "c88b6f0a-829e-4b0b-94b7-f06ab5908f5a"
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
+
 [compat]
+BridgeStan = "1, 2"
+Distributions = "0.23, 0.24, 0.25"
+DocStringExtensions = "0.9"
 julia = "1.6"
 
 [extras]
