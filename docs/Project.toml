@@ -1,0 +1,3 @@
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+StanDistributions = "c79ef891-62a4-4b64-9d5a-fce85bcd6f75"
